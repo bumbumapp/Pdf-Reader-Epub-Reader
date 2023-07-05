@@ -1,0 +1,61 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
+    </style>
+
+    <style name="MJ_PDF_THEME" parent="Theme.AppCompat.DayNight.DarkActionBar" >
+        <item name="android:actionOverflowButtonStyle">@style/MJ_PDF_THEME.OverFlow</item>
+        <item name="actionOverflowMenuStyle">@style/CMOptionsMenu</item>
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">#FFC107</item>
+        <item name="statusBarBackground">@color/dark_blue</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance</item>
+    </style>
+    <style name="Setting_Theme" parent="Theme.AppCompat.DayNight.DarkActionBar" >
+        <item name="android:actionOverflowButtonStyle">@style/MJ_PDF_THEME.OverFlow</item>
+        <item name="actionOverflowMenuStyle">@style/CMOptionsMenu</item>
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">#2196F3</item>
+        <item name="statusBarBackground">@color/dark_blue</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance</item>
+    </style>
+
+    <!-- to change (color and margin) of the more icon option in the appBar   -->
+    <style name="MJ_PDF_THEME.OverFlow">
+<!--        <item name="android:src">@drawable/ic_more_vert</item>-->
+        <item name="android:src">@drawable/ic_more_vert</item>
+        <item name="android:padding" tools:targetApi="o">12dp</item>
+
+    </style>
+
+    <!-- To change the background of options menu-->
+    <style name="CMOptionsMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:popupBackground">@color/dark_blue</item>
+    </style>
+
+    <!-- To change text color of items in options menu-->
+    <style name="TextAppearance">
+        <item name="android:textColor">@color/topBarColor</item>
+    </style>
+
+
+    <style name="MJDialogThemeDark" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/topBarBackgroundColor</item>
+        <item name="android:textColor">@color/topBarColor</item>
+        <item name="textColorAlertDialogListItem">@color/topBarColor</item>
+        <item name="buttonBarPositiveButtonStyle">@color/topBarColor</item>
+        <item name="buttonBarNegativeButtonStyle">@color/topBarColor</item>
+    </style>
+
+    <style name="MJDialogThemeLight" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/topBarBackgroundColor</item>
+        <item name="android:positiveButtonText">@color/topBarBackgroundColor</item>
+        <item name="android:negativeButtonText">@color/topBarBackgroundColor</item>
+    </style>
+
+</resources>

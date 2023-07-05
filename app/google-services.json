@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "903252911436",
+    "project_id": "pdf-reader-epub-reader",
+    "storage_bucket": "pdf-reader-epub-reader.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903252911436:android:7773b76883a1910ca45be9",
+        "android_client_info": {
+          "package_name": "com.bumbumapps.pdfandepubreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903252911436-n9n0d782p4veuu67qu8fp1ck2ip6voi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPPmaW2tQv-ExOF2aKjRmGbY5D0nIlWMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903252911436-n9n0d782p4veuu67qu8fp1ck2ip6voi1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

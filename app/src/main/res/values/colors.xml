@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="colorPrimary">#263238</color>
+    <color name="colorPrimaryDark">#202A2F</color>
+    <color name="colorAccent">#009688</color>
+
+    <color name="colorBrightOpposite">#FDF9F9</color>
+    <color name="colorDarkOpposite">#263238</color>
+
+    <color name="bright">#FDF9F9</color>
+    <color name="dark">#263238</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#CDCDCD</color>
+    <color name="darkGrey">#959595</color>
+    <color name="dark_blue">#221f35</color>
+
+    <color name="topBarColor">@color/white</color>
+    <color name="topBarBackgroundColor">#221f35</color>
+    <color name="topBarBackgroundOffColor">#2F2F2F</color>
+
+
+<!--    // Color of Action bar-->
+<!--    //supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#232e32")))-->
+<!--    //        window.statusBarColor = Color.parseColor("#1b2529")-->
+
+</resources>

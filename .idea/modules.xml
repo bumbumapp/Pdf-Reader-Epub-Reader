@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mj_pdf_reader-V2.0.1-stable.iml" filepath="$PROJECT_DIR$/.idea/modules/mj_pdf_reader-V2.0.1-stable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PdfiumAndroid/mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/PdfiumAndroid/mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PdfiumAndroid/mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/PdfiumAndroid/mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PdfiumAndroid/mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.main.iml" filepath="$PROJECT_DIR$/.idea/modules/PdfiumAndroid/mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PdfiumAndroid/mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/PdfiumAndroid/mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>

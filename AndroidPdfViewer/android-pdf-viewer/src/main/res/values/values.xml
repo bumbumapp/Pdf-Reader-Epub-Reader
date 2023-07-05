@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="primaryColor">#263238</color>-->
+<!--    <color name="primaryColor">#202A2F</color>-->
+    <color name="primaryColor">#221f35</color>
+    <dimen name="scrollHandleRadius">25dp</dimen>
+</resources>

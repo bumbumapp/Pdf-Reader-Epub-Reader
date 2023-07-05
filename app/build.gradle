@@ -1,0 +1,158 @@
+/*
+            ~ MJ PDF
+    ~ Copyright (C) 2023 Mudlej
+    ~
+            ~ This program is free software: you can redistribute it and/or modify
+    ~ it under the terms of the GNU General Public License as published by
+    ~ the Free Software Foundation, either version 3 of the License, or
+    ~ (at your option) any later version.
+    ~ This program is distributed in the hope that it will be useful,
+            ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+    ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    ~ GNU General Public License for more details.
+    ~ You should have received a copy of the GNU General Public License
+    ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    ~
+
+    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    ~ This code was previously licensed under
+    ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                    ~ MIT License
+    ~ Copyright (c) 2018 Gokul Swaminathan
+    ~ Copyright (c) 2023 Mudlej
+    ~
+            ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+    ~ of this software and associated documentation files (the "Software"), to deal
+    ~ in the Software without restriction, including without limitation the rights
+    ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    ~ copies of the Software, and to permit persons to whom the Software is
+    ~ furnished to do so, subject to the following conditions:
+    ~ The above copyright notice and this permission notice shall be included in all
+    ~ copies or substantial portions of the Software.
+    ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    ~ SOFTWARE.
+*/
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.objectbox'
+apply plugin:  'com.google.gms.google-services'
+apply plugin:  'com.google.firebase.crashlytics'
+
+android {
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildToolsVersion "30.0.3"
+    compileSdkVersion 32
+    defaultConfig {
+        applicationId "com.bumbumapps.pdfandepubreader"
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include "x86_64", "x86", "armeabi-v7a", "arm64-v8a"
+            universalApk true
+        }
+    }
+}
+
+dependencies {
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
+
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
+
+
+    // AndroidX Fragment library Kotlin
+    implementation "androidx.fragment:fragment-ktx:1.5.2"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
+
+    // Room
+    implementation "androidx.room:room-runtime:2.4.3"
+    implementation 'com.github.barteksc:pdfium-android:1.9.0'
+    annotationProcessor "androidx.room:room-compiler:2.4.3"
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:2.4.3"
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Material Design
+    implementation 'com.google.android.material:material:1.6.1'
+
+    // Intro Library
+    implementation 'com.github.paolorotolo:appintro:v5.1.0'
+
+    // MJ PDF's fork of
+    implementation project(':AndroidPdfViewer:android-pdf-viewer')
+
+    // License Presenter Library (Proguard config not needed)
+    implementation 'com.github.franmontiel:AttributionPresenter:1.0.1'
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.9.1'
+
+    // kotlin coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    // A color picker for Android by Hong Duan
+    implementation 'com.github.duanhong169:colorpicker:1.1.6'
+    implementation 'androidx.activity:activity-ktx:1.2.0'
+    implementation 'io.objectbox:objectbox-android:2.9.0'
+    annotationProcessor 'io.objectbox:objectbox-processor:2.9.0'
+    implementation "com.folioreader:folioreader:0.5.4"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation platform('com.google.firebase:firebase-bom:31.2.2')
+
+    // Add the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.karumi:dexter:6.2.3'
+
+}

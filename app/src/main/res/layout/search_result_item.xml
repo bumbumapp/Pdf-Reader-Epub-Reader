@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/topBarColor"
+    android:background="@drawable/bookmark_list_item_background">
+
+    <TextView
+        android:id="@+id/resultPageNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_result_page_background"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        tools:text="PAGE\n154"
+        android:textSize="18sp"
+        android:textColor="@color/topBarBackgroundColor"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/resultText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="10dp"
+        tools:text="When the big guy hit the big wall with a big hammer."
+        android:textSize="18sp"
+        android:textColor="@color/topBarBackgroundColor"
+        android:maxLines="4"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/resultPageNumber"
+        app:layout_constraintEnd_toStartOf="@id/showMoreButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/showMoreButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:paddingEnd="16dp"
+        android:paddingVertical="8dp"
+        android:src="@drawable/ic_solid_arrow_down"
+        app:tint="@color/topBarBackgroundColor"
+        app:layout_constraintStart_toEndOf="@id/resultText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/expand_search_result_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
