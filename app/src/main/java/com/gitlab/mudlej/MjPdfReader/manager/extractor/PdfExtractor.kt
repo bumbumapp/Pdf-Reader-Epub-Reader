@@ -6,7 +6,7 @@ import com.shockwave.pdfium.PdfDocument
 
 interface PdfExtractor {
 
-    fun getPageText(pageNumber: Int): String
+    fun getPageText(pdfFilePath: String, pageNumber: Int): String?
 
     fun getPageCount(): Int
 

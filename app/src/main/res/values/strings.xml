@@ -38,7 +38,7 @@
     ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     ~ SOFTWARE.
 -->
-    <string name="mj_app_name" translatable="false">Pdf reader &amp; Epub Reader</string>
+    <string name="mj_app_name" translatable="false">PDF Reader &amp; Epub Reader</string>
     <string name="pick_file">Pick File</string>
     <string name="toast_pick_file_error">Unable to pick file! Check your file manager on your phone.</string>
     <string name="toast_http_code_error">Remote server responded with an error.</string>
@@ -291,5 +291,9 @@
     <string name="press_back_again">Press back again to exit</string>
     <string name="dracula_theme">Dracula Theme</string>
     <string name="recent_file">Recent Files</string>
+
+    <string name="banner_id">ca-app-pub-8444865753152507/7253899057</string>
+    <string name="app_id">ca-app-pub-8444865753152507~2009558657</string>
+    <string name="interstitial_id">ca-app-pub-8444865753152507/6012969574</string>
 
 </resources>

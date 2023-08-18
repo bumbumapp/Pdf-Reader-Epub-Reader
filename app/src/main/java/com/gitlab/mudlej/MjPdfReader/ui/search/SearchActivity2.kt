@@ -1,9 +1,15 @@
 package com.gitlab.mudlej.MjPdfReader.ui.search
 
+import android.annotation.SuppressLint
+import android.content.ContentResolver
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.ParcelFileDescriptor
+import android.provider.OpenableColumns
 import android.util.Log
+import android.view.Display
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -24,6 +30,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.File
+import java.io.FileOutputStream
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.random.Random
@@ -36,20 +44,24 @@ class SearchActivity2 : AppCompatActivity(), SearchResultFunctions {
     private val searchResultAdapter = SearchResultAdapter(this)
     private var searchResults: MutableList<SearchResult> = mutableListOf()
     private lateinit var pdfExtractor: PdfExtractor
-
+    private var path:String? = null
+    private var pdfPath:String? = null
     private val lastPageLiveData = MutableLiveData<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySearch2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        pdfPath = intent.getStringExtra(PDF.filePathKey)
+        val uri = Uri.parse(pdfPath)
+        path = getFilePathForN(uri,this)
         showProgressBar()
         initPdfExtractor()
         initActionBar()
         initSearchResults()
         initLoadingProgressBar()
         initRecyclerView()
+
     }
 
     private fun initLoadingProgressBar() {
@@ -72,7 +84,6 @@ class SearchActivity2 : AppCompatActivity(), SearchResultFunctions {
     }
 
     private fun initPdfExtractor() {
-        val pdfPath = intent.getStringExtra(PDF.filePathKey)
         pdfExtractor = PdfExtractorFactory.create(this, Uri.parse(pdfPath))
     }
 
@@ -108,8 +119,8 @@ class SearchActivity2 : AppCompatActivity(), SearchResultFunctions {
         val searchResults = mutableListOf<SearchResult>()
         val time = measureTimeMillis {
             for (pageNumber in 1 .. pdfExtractor.getPageCount()) {
-                val pageText = pdfExtractor.getPageText(pageNumber)
-                if (pageText.isEmpty() || pageText.isBlank()) {
+                val pageText = pdfExtractor.getPageText(path!!,pageNumber)
+                if (pageText!!.isEmpty() || pageText!!.isBlank()) {
                     continue
                 }
 
@@ -245,16 +256,55 @@ class SearchActivity2 : AppCompatActivity(), SearchResultFunctions {
         setResult(PDF.SEARCH_RESULT_OK, resultIntent)
         finish()
     }
+    @SuppressLint("Recycle")
+    private fun getFilePathForN(uri: Uri, context: Context): String? {
+        var filePath = uri.path.toString()
+        val file = File(filePath)
+        if (file.exists()){
+            return filePath
+        }
+        else{
+            val returnCursor = context.contentResolver.query(uri, null, null, null, null)
+            val nameIndex = returnCursor!!.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+            val sizeIndex = returnCursor.getColumnIndex(OpenableColumns.SIZE)
+            returnCursor.moveToFirst()
+            val name = returnCursor.getString(nameIndex)
+            val size = java.lang.Long.toString(returnCursor.getLong(sizeIndex))
+            val file = File(context.filesDir, name)
+            try {
+                val inputStream = context.contentResolver.openInputStream(uri)
+                val outputStream = FileOutputStream(file)
+                var read = 0
+                val maxBufferSize = 1 * 1024 * 1024
+                val bytesAvailable = inputStream!!.available()
 
-    // TODO:
+                //int bufferSize = 1024;
+                val bufferSize = Math.min(bytesAvailable, maxBufferSize)
+                val buffers = ByteArray(bufferSize)
+                while (inputStream.read(buffers).also { read = it } != -1) {
+                    outputStream.write(buffers, 0, read)
+                }
+                Log.e("File Size", "Size " + file.length())
+                inputStream.close()
+                outputStream.close()
+                Log.e("File Path", "Path " + file.path)
+                Log.e("File Size", "Size " + file.length())
+            } catch (e: java.lang.Exception) {
+                Log.e("Exception", e.message!!)
+            }
+            return file.path
+        }
+
+    }
+
+
     override fun onShowMoreResultTextClicked(searchResult: SearchResult, searchResultIndex: Int): SearchResult {
         val query = searchResult.text.substring(searchResult.inputStart, searchResult.inputEnd)
-        val pageText = pdfExtractor.getPageText(searchResult.pageNumber)
-
+        val pageText = pdfExtractor.getPageText(path!!,searchResult.pageNumber)
         val newSearchResult = getPageResult(
             query,
             searchResult.originalIndex,
-            pageText,
+            pageText!!,
             searchResult.pageNumber,
             200,
             expanded = true

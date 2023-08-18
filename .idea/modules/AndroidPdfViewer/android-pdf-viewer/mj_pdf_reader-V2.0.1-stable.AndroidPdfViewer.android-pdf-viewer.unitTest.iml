@@ -27,7 +27,6 @@
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.main" scope="TEST" />
-    <orderEntry type="module" module-name="mj_pdf_reader-V2.0.1-stable.PdfiumAndroid.main" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.collection:collection:1.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-common:2.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.arch.core:core-common:2.0.0" level="project" />
@@ -35,6 +34,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.core:core:1.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.versionedparcelable:versionedparcelable:1.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-runtime:2.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.barteksc:pdfium-android:1.9.0@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.main" />
 </module>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="isInDatabase" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="947f0e35-4014-402e-856f-3f1bf1801ba6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_itextpdf_itextg_5_5_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/util/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/util/AdsLoader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/javaCompile/jarAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.9/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_ktx_1_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_ktx_1_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_3_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_1_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_1_4_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_8_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_databinding_viewbinding_4_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_databinding_viewbinding_4_2_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_5_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_5_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_ktx_1_5_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_ktx_1_5_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_extensions_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_extensions_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_ktx_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_ktx_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_process_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_process_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_service_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_service_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_ktx_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_ktx_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_ktx_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_ktx_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_ktx_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_ktx_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_ktx_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_ktx_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_5_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_4_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_4_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_4_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_4_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_folioreader_folioreader_0_5_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_folioreader_folioreader_0_5_4_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_9_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_codetoart_r2_shared_kotlin_1_0_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_codetoart_r2_shared_kotlin_1_0_4_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_codetoart_r2_streamer_kotlin_1_0_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_codetoart_r2_streamer_kotlin_1_0_4_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_duanhong169_checkerboarddrawable_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_duanhong169_checkerboarddrawable_1_0_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_duanhong169_colorpicker_1_1_6_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_duanhong169_colorpicker_1_1_6_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_duanhong169_logger_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_duanhong169_logger_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_franmontiel_AttributionPresenter_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_franmontiel_AttributionPresenter_1_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_paolorotolo_appintro_v5_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_paolorotolo_appintro_v5_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_karumi_dexter_6_2_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_karumi_dexter_6_2_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_objectbox_objectbox_android_2_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_objectbox_objectbox_android_2_9_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AndroidPdfViewer/android-pdf-viewer/mj_pdf_reader-V2.0.1-stable.AndroidPdfViewer.android-pdf-viewer.unitTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.unitTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/generated/source/buildConfig/debug/com/github/barteksc/pdfviewer/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/aar_main_jar/debug/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/aar_metadata/debug/aar-metadata.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/annotations_typedef_file/debug/typedefs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/compile_r_class_jar/debug/R.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/compile_symbol_list/debug/R.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/compiled_local_resources/debug/out/drawable_default_scroll_handle_bottom.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/compiled_local_resources/debug/out/drawable_default_scroll_handle_left.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/compiled_local_resources/debug/out/drawable_default_scroll_handle_right.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/compiled_local_resources/debug/out/drawable_default_scroll_handle_top.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/incremental/packageDebugAssets/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/AnimationManager$XAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/AnimationManager$YAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/AnimationManager$ZoomAnimation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/AnimationManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/BuildConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/CacheManager$PagePartComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/CacheManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/DecodingAsyncTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/DragPinchManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PDFView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PDFView$Configurator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PDFView$ScrollDir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PDFView$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PDFView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PagesLoader$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PagesLoader$GridSize.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PagesLoader$Holder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PagesLoader$RenderRange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PagesLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/PdfFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/RenderingHandler$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/RenderingHandler$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/RenderingHandler$RenderingTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/RenderingHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/exception/FileNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/exception/PageRenderingException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/link/DefaultLinkHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/link/LinkHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/Callbacks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnDrawListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnErrorListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnLoadCompleteListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnLongPressListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnPageChangeListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnPageErrorListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnPageScrollListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnRenderListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/listener/OnTapListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/model/LinkTapEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/model/PagePart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/scroll/DefaultScrollHandle$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/scroll/DefaultScrollHandle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/scroll/ScrollHandle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/source/AssetSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/source/ByteArraySource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/source/DocumentSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/source/FileSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/source/InputStreamSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/source/UriSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/ArrayUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/Constants$Cache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/Constants$Pinch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/FitPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/MathUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/PageSizeCalculator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/PageSizeCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/SnapEdge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/javac/debug/classes/com/github/barteksc/pdfviewer/util/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/merged_java_res/debug/out.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/merged_manifest/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/navigation_json/debug/navigation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/packaged_manifests/debug/output-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/packaged_res/debug/drawable/default_scroll_handle_bottom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/packaged_res/debug/drawable/default_scroll_handle_left.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/packaged_res/debug/drawable/default_scroll_handle_right.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/packaged_res/debug/drawable/default_scroll_handle_top.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/runtime_library_classes_jar/debug/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/outputs/aar/android-pdf-viewer-debug.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/src/main/java/com/github/barteksc/pdfviewer/DragPinchManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/src/main/java/com/github/barteksc/pdfviewer/DragPinchManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/src/main/java/com/github/barteksc/pdfviewer/PdfFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidPdfViewer/android-pdf-viewer/src/main/java/com/github/barteksc/pdfviewer/PdfFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/generated/source/buildConfig/debug/com/shockwave/pdfium/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/aar_main_jar/debug/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/aar_metadata/debug/aar-metadata.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/annotations_typedef_file/debug/typedefs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/compile_r_class_jar/debug/R.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/compile_symbol_list/debug/R.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/incremental/packageDebugAssets/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/BuildConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/PdfDocument$Bookmark.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/PdfDocument$Link.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/PdfDocument$Meta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/PdfDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/PdfPasswordException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/PdfiumCore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/util/Size.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/javac/debug/classes/com/shockwave/pdfium/util/SizeF.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/merged_java_res/debug/out.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/merged_manifest/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/navigation_json/debug/navigation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/packaged_manifests/debug/output-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/runtime_library_classes_jar/debug/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/outputs/aar/PdfiumAndroid-debug.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PdfiumAndroid/src/main/java/com/shockwave/pdfium/PdfiumCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/PdfiumAndroid/src/main/java/com/shockwave/pdfium/PdfiumCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/output-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/manager/extractor/PdfExtractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/manager/extractor/PdfExtractor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/manager/extractor/PdfExtractorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/manager/extractor/PdfExtractorImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/bookmark/BookmarkViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/bookmark/BookmarkViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/dialog/Dialogs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/dialog/Dialogs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/link/LinkViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/link/LinkViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/main/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/search/SearchActivity2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/search/SearchActivity2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/search/SearchResultAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/search/SearchResultAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/search/SearchResultViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/search/SearchResultViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/settings/SettingsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/gitlab/mudlej/MjPdfReader/ui/settings/SettingsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pdf_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pdf_items.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main_menu2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_menu2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/dark_framed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/light_framed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/light_full_screen_buttons_framed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/light_main_menu_framed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/links_framed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/new app/new_app_mj_reader_recent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/new app/new_app_nav_drawer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/search_results_framed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/table_of_contents_framed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/text_mode_menu_framed.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[170d12cb]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="C:\Users\Durkhan\AppsJks\PdfReaderEpubReader.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2S9PLgRa9aDDIaTcJbUc4HS2emZ" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="mj_pdf_reader-V2.0.1-stable.app" />
+    <property name="BundleExportedModule" value="mj_pdf_reader-V2.0.1-stable.app" />
+    <property name="ExportApk.ApkPath" value="C:\Users\Durkhan\Play store projects\mj_pdf_reader-V2.0.1-stable\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-viewC:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/AndroidPdfViewer/android-pdf-viewer/src/main/java/com/github/barteksc/pdfviewer/PDFView.java_SELECTED" value="PDFView" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gitlab.mudlej.MjPdfReader.util" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="mj_pdf_reader-V2.0.1-stable.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="947f0e35-4014-402e-856f-3f1bf1801ba6" name="Changes" comment="" />
+      <created>1688555772585</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688555772585</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

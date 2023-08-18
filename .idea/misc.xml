@@ -3,38 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Durkhan/.gradle/caches/transforms-3/0704cf04e3a975aed2cda731c027d215/transformed/jetified-folioreader-0.5.4/res/layout/activity_search.xml" value="0.1265625" />
-        <entry key="..\:/Users/Durkhan/.gradle/caches/transforms-3/0704cf04e3a975aed2cda731c027d215/transformed/jetified-folioreader-0.5.4/res/layout/progress_dialog.xml" value="0.125" />
-        <entry key="..\:/Users/Durkhan/AppData/Local/Android/Sdk/platforms/android-33/data/res/layout/select_dialog_item.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/drawable-v24/pdf_ic.xml" value="0.154" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/drawable/emptyfolder.xml" value="0.137" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/drawable/ic_book_bookmark.xml" value="0.138" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/drawable/info_icon.xml" value="0.1535" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/actionbar_second.xml" value="0.2677083333333333" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/actionbar_title.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/activity_bookmarks.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/activity_link.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/activity_main.xml" value="0.24259259259259258" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/activity_recent_files_ativity.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/activity_search.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/activity_settings.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/activity_text_mode.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/advanced_dialog.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/bookmarks_list_item.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/link_item.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/password_dialog.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/pdf_items.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/progress_dialog.xml" value="0.125" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/search_result_item.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/menu/fab_menu.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/menu/main_menu.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/menu/search_menu.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/menu/text_mode_menu.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/xml/file_paths.xml" value="0.20078125" />
-        <entry key="..\:/Users/Durkhan/Downloads/mj_pdf_reader-V2.0.1-stable/mj_pdf_reader-V2.0.1-stable/app/src/main/res/xml/settings.xml" value="0.26875" />
-        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/drawable/about_button_background.xml" value="0.152" />
-        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/drawable/button_background.xml" value="0.152" />
-        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/dialog_about.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/drawable/about_button_background.xml" value="0.1535" />
+        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/drawable/lock_icon.xml" value="0.1535" />
+        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/activity_main.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/dialog_about.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/password_dialog.xml" value="0.26875" />
+        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/layout/pdf_items.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/menu/main_menu2.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Durkhan/Play store projects/mj_pdf_reader-V2.0.1-stable/app/src/main/res/xml/settings.xml" value="0.26875" />
       </map>
     </option>
   </component>

@@ -44,12 +44,14 @@
 package com.gitlab.mudlej.MjPdfReader
 
 import android.app.Application
+import com.gitlab.mudlej.MjPdfReader.util.AdsLoader
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
         FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
+        AdsLoader.displayInterstitial(this)
 
     }
 }

@@ -59,8 +59,8 @@ android {
         applicationId "com.bumbumapps.pdfandepubreader"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 1
-        versionName "1.0.0"
+        versionCode 3
+        versionName "1.0.2"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
     }
@@ -72,8 +72,7 @@ android {
     buildTypes {
         release {
             debuggable false
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -91,13 +90,35 @@ android {
     }
     splits {
         abi {
-            enable true
-            reset()
-            include "x86_64", "x86", "armeabi-v7a", "arm64-v8a"
-            universalApk true
+            def isReleaseBuild = false
+
+            gradle.startParameter.taskNames.find {
+                // Enable split for release builds in different build flavors
+                // (assemblePaidRelease, assembleFreeRelease, etc.).
+                if (it ==~ /:app:assemble.*Release/) {
+                    isReleaseBuild = true
+                    return true // break
+                }
+
+                return false // continue
+            }
+
+            // Enables building multiple APKs per ABI.
+            enable isReleaseBuild
+            //...
         }
     }
+
 }
+//    splits {
+//        abi {
+//            enable true
+//            reset()
+//            include "x86_64", "x86", "armeabi-v7a", "arm64-v8a"
+//            universalApk true
+//        }
+//    }
+//}
 
 dependencies {
     // Kotlin
@@ -154,5 +175,8 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.karumi:dexter:6.2.3'
+    implementation 'com.google.android.gms:play-services-ads:21.5.0'
+
+    implementation 'com.itextpdf:itextg:5.5.10'
 
 }

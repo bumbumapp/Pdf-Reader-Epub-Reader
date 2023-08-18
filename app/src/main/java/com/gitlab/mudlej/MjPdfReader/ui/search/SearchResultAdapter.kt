@@ -24,7 +24,7 @@ class SearchResultAdapter(
     }
 
     override fun onBindViewHolder(holder: SearchResultViewHolder, i: Int) {
-        getItem(i)?.let { holder.bind(it) }
+        getItem(i)?.let { holder.bind(it,holder.itemView.context) }
     }
 
     override fun onCurrentListChanged(previousList: MutableList<SearchResult>, currentList: MutableList<SearchResult>) {

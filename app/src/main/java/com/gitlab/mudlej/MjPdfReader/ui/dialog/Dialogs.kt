@@ -61,6 +61,7 @@ import com.gitlab.mudlej.MjPdfReader.data.PDF
 import com.gitlab.mudlej.MjPdfReader.data.Preferences
 import com.gitlab.mudlej.MjPdfReader.databinding.PasswordDialogBinding
 import com.gitlab.mudlej.MjPdfReader.ui.main.MainActivity
+import com.gitlab.mudlej.MjPdfReader.util.AdsLoader
 import com.google.android.material.textfield.TextInputLayout
 import com.shockwave.pdfium.PdfDocument
 
@@ -232,9 +233,11 @@ fun showGoToPageDialog(activity: Activity, pageIndex: Int, pdfLength: Int, goToP
                 Toast.makeText(activity, activity.getString(R.string.no_input), Toast.LENGTH_SHORT).show()
                 return@setPositiveButton
             }
-            if (query.isDigitsOnly())
-                goToPageFunc(query.toInt() - 1)
-
+            if (query.isDigitsOnly()) {
+                AdsLoader.showAds(activity) {
+                    goToPageFunc(query.toInt() - 1)
+                }
+            }
             dialog.dismiss()
         }
         .setNegativeButton(activity.getString(R.string.cancel)) { dialog, _ -> dialog.dismiss() }

@@ -71,6 +71,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.graphics.drawable.DrawableCompat
@@ -87,6 +88,7 @@ import com.folioreader.util.AppUtil
 import com.folioreader.util.OnHighlightListener
 import com.folioreader.util.ReadLocatorListener
 import com.github.barteksc.pdfviewer.PDFView.Configurator
+import com.github.barteksc.pdfviewer.PDFView.GONE
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle
 import com.github.barteksc.pdfviewer.scroll.ScrollHandle
 import com.github.barteksc.pdfviewer.util.Constants
@@ -108,11 +110,15 @@ import com.gitlab.mudlej.MjPdfReader.repository.AppDatabase
 import com.gitlab.mudlej.MjPdfReader.ui.*
 import com.gitlab.mudlej.MjPdfReader.ui.bookmark.BookmarksActivity
 import com.gitlab.mudlej.MjPdfReader.ui.link.LinksActivity
+import com.gitlab.mudlej.MjPdfReader.ui.search.SearchActivity2
 import com.gitlab.mudlej.MjPdfReader.ui.settings.SettingsActivity
 import com.gitlab.mudlej.MjPdfReader.util.*
+import com.google.android.gms.ads.AdRequest
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.itextpdf.text.pdf.PdfReader
+import com.itextpdf.text.pdf.parser.PdfTextExtractor
 import com.shockwave.pdfium.PdfPasswordException
 import io.objectbox.Box
 import io.objectbox.BoxStore
@@ -173,7 +179,8 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
 
         epubreaderLoad()
 
-
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
         // Create PDF by restoring it in case of an activity restart OR open filer picker
         if (savedInstanceState != null) {
             restoreInstanceState(savedInstanceState)
@@ -206,7 +213,80 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         getRecentFiles()
         //showAppFeaturesDialogOnFirstRun()
     }
+    private fun showNoTextInPageToast() {
+        Toast.makeText(this, "Couldn't find text in this page.", Toast.LENGTH_LONG).show()
+    }
+    private fun showCopyPageTextDialog(
+        activity: MainActivity,
+        pageNumber: Int,
+        pageText: String,
+        pref: Preferences,
+        bypass: Boolean = false
+    ) {
+        if (!bypass && !pref.getCopyTextDialog()) return
 
+        // create a custom view to make the text selectable
+        val pageTextView = TextView(activity)
+        pageTextView.setPadding(30, 20, 30, 0)
+        pageTextView.setTextIsSelectable(true)
+        pageTextView.setTextColor(ContextCompat.getColor(activity, R.color.topBarBackgroundColor))
+        pageTextView.textSize = 18f
+        pageTextView.text = pageText
+
+        val scrollView = ScrollView(activity)
+        scrollView.addView(pageTextView)
+        //scrollView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
+        //scrollView.scrollBarSize = 2
+
+        AlertDialog.Builder(activity, R.style.MJDialogThemeLight)
+            .setView(scrollView)
+            .setTitle("${activity.getString(R.string.selectable_text)} #${pageNumber + 1}")
+            .setNegativeButton(activity.getString(R.string.close)) { dialog, _ -> dialog.dismiss() }
+            .setPositiveButton(activity.getString(R.string.copy_all)) { dialog, _ ->
+                val copyLabel = "${activity.getString(R.string.page)} #${pageNumber} Text"
+                copyToClipboard(activity, copyLabel, pageText)
+
+                // show message to user before closing
+                Toast.makeText(activity, activity.getString(R.string.copied_to_clipboard), Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+            }
+            .also {
+                // don't show this button if the click came from the action bar
+                if (!bypass) {
+                    it.setNeutralButton(activity.getString(R.string.dont_pop_up)) { dialog, _ ->
+                        pref.setCopyTextDialog(false)
+                        dialog.dismiss()
+                    }
+                }
+            }
+            .show()
+    }
+    private fun copyPageText(bypass: Boolean) {
+        val pageNumber = pdf.pageNumber
+        if (shouldStopExtracting.getOrElse(pageNumber) { false }) {
+            return
+        }
+
+        var pageText = ""
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                var pathFromU = pdf.uri?.let { getFilePathForN(it,this@MainActivity) }
+                val pdfReader = PdfReader(pathFromU)
+                pageText = PdfTextExtractor.getTextFromPage(pdfReader, pageNumber + 1)
+            }
+            catch (e: Throwable) {
+                Log.e("PDFium", "extractPageText($pageNumber): error while extracting text", e)
+                showFailedExtractTextSnackbar(pageNumber)
+            }
+
+            withContext(Dispatchers.Main) {
+                if (pageText.isEmpty() || pageText.isBlank())
+                    showNoTextInPageToast()
+                else
+                    showCopyPageTextDialog(this@MainActivity, pageNumber, pageText, pref, bypass)
+            }
+        }
+    }
     fun initPdf(pdf: PDF, uri: Uri) {
         pdf.uri = uri
         pdf.fileHash = computeHash(this@MainActivity, pdf)
@@ -222,6 +302,11 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             "Can't hash the file! Last visited page won't be remembered in this session.",
             Toast.LENGTH_LONG
         ).show()
+    }
+    private fun showFailedExtractTextSnackbar(pageNumber: Int) {
+        Snackbar.make(binding.root, "Failed to extract text of this file.", Snackbar.LENGTH_SHORT)
+            .setAction("Stop this message") { shouldStopExtracting[pageNumber] = true }
+            .show()
     }
 
     private fun setCustomActionBar() {
@@ -290,7 +375,10 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
                 Log.d("EXCEPTIONREAD", e.message.toString())
             }
         }
+
+
         addRecentFiles(pdf.uri)
+        Log.d("EXCEPTIONREAD", "e.message.toString()")
         supportActionBar?.show()
         checkVisiblity=false
         val mimeType = contentResolver.getType(uri)
@@ -356,6 +444,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             .enableAntialiasing(pref.getAntiAliasing())
             .onTap { fullScreenOptionsManager.showAllTemporarilyOrHide(); true }
             .scrollHandle(createScrollHandle())
+            .onLongPress{ copyPageText(false) }
             .spacing(Preferences.spacingDefault)
             .onError { exception: Throwable -> handleFileOpeningError(exception) }
             .onPageError { page: Int, error: Throwable -> reportLoadPageError(page, error) }
@@ -776,7 +865,10 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
                 val recentFilePathsBox: Box<RecentPaths> = boxStore.boxFor(RecentPaths::class.java)
                 val recentPaths=recentFilePathsBox.all
                 val isInDatabase = async {checkFileInDatabase(recentPaths,path,date,fileName,recentFilePathsBox)}.await()
+                Log.d("!isInDatabase","!isInDatabase jhdkdfd")
+
                 if (!isInDatabase){
+
                     val recentFile = RecentPaths(
                         path = path,
                         parent = parent,
@@ -1014,6 +1106,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         }
 
         if (!pdf.isFullScreenToggled) {
+            binding.adView.visibility = View.GONE
             hideUi()
             pdf.isFullScreenToggled = true
             fullScreenOptionsManager.hideAll()
@@ -1023,6 +1116,8 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
                 showHowToExitFullscreenDialog(this, pref)
             }
         } else {
+            binding.adView.visibility = View.VISIBLE
+
             showUi()
             pdf.isFullScreenToggled = false
             fullScreenOptionsManager.showAllTemporarilyOrHide()
@@ -1144,7 +1239,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.fullscreenOption -> toggleFullscreen()
+            R.id.fullscreenOption ->AdsLoader.showAds(this){toggleFullscreen()}
             R.id.switchThemeOption -> switchPdfTheme()
             R.id.openFileOption -> pickFile()
             R.id.bookmarksListOption -> showBookmarks()
@@ -1160,10 +1255,45 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        // set search functionality
+        val searchViewc = menu.findItem(R.id.searchOption).actionView as SearchView
+        searchViewc.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                fun startSearchActivity() {
+                    Intent(this@MainActivity, SearchActivity2::class.java).also { searchIntent ->
+                        searchIntent.putExtra(PDF.filePathKey, pdf.uri.toString())
+                        searchIntent.putExtra(PDF.searchQueryKey, query)
+                        startActivityForResult(searchIntent, PDF.startSearchActivity)
+                    }
+                }
 
+                if (query.isBlank() || query.length < 3) {
+                    AlertDialog.Builder(this@MainActivity)
+                        .setTitle(getString(R.string.too_short_query))
+                        .setMessage(getString(R.string.too_short_query_message).format(query))
+                        .setNeutralButton(getString(R.string.proceed_anyway)) { _, _ ->
+                            startSearchActivity()
+                        }
+                        .setPositiveButton(getText(R.string.ok)) { badQueryDialog, _ ->
+                            badQueryDialog.dismiss()
+                        }
+                        .show()
+                }
+                else {
+                    startSearchActivity()
+                }
+                return false
+            }
+
+            override fun onQueryTextChange(query: String) = false
+        })
+
+        // create a lambda to trigger the search
+        showSearchBar = { menu.performIdentifierAction(R.id.searchOption, 0) }
 
         return super.onPrepareOptionsMenu(menu)
     }
+
 
     private fun toggleSecondBar() {
         binding.apply {
@@ -1436,6 +1566,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         if (!binding.pickFile.isVisible){
             checkVisibilityForRecentFiles()
             getRecentFiles()
+            binding.adView.visibility = View.VISIBLE
         }else {
             if (doubleBackToExitPressedOnce) {
                 finishAffinity()
@@ -1478,14 +1609,10 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
 
                 pdfsAdapter = PdfsAdapter(recentFiles, object : ItemOnClickListener {
                     override fun onItemClick(uri: Uri) {
-                        try {
-                            var intent =
-                                Intent(this@MainActivity, MainActivity::class.java)
-                            intent.putExtra("uri", uri.toString())
-                            startActivity(intent)
-                        } catch (e: Exception) {
-                            Log.d("Exception", e.message.toString())
+                        AdsLoader.showAds(this@MainActivity){
+                            whenClickedItem(uri)
                         }
+
                     }
 
                 })
@@ -1499,6 +1626,17 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             }
 
         }
+        }
+    }
+
+    private fun whenClickedItem(uri: Uri) {
+        try {
+            val intent =
+                Intent(this@MainActivity, MainActivity::class.java)
+            intent.putExtra("uri", uri.toString())
+            startActivity(intent)
+        } catch (e: Exception) {
+            Log.d("Exception", e.message.toString())
         }
     }
 

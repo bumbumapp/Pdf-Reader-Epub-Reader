@@ -1,5 +1,6 @@
 package com.gitlab.mudlej.MjPdfReader.ui.search
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.text.Spannable
@@ -12,6 +13,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gitlab.mudlej.MjPdfReader.data.SearchResult
 import com.gitlab.mudlej.MjPdfReader.databinding.SearchResultItemBinding
+import com.gitlab.mudlej.MjPdfReader.util.AdsLoader
 import com.gitlab.mudlej.MjPdfReader.util.indexesOf
 
 class SearchResultViewHolder(
@@ -20,7 +22,7 @@ class SearchResultViewHolder(
     private val searchResultAdapter: SearchResultAdapter
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(searchResult: SearchResult) {
+    fun bind(searchResult: SearchResult, context: Context) {
         val text = stylizeText(searchResult)
         binding.apply {
             resultText.setText(text, TextView.BufferType.SPANNABLE)
@@ -42,7 +44,9 @@ class SearchResultViewHolder(
 
             // got to page
             root.setOnClickListener {
-                searchResultFunctions.onSearchResultClicked(searchResult)
+                AdsLoader.showAds(context){
+                    searchResultFunctions.onSearchResultClicked(searchResult)
+                }
             }
         }
     }

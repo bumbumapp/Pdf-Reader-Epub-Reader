@@ -77,6 +77,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
         aliasSwitch.key = Preferences.antiAliasingKey
         aliasSwitch.isIconSpaceReserved = false
 
+
+        val showCopyTextDialogSwitch = SwitchPreferenceCompat(requireContext())
+        showCopyTextDialogSwitch.title = getString(R.string.show_copy_dialog_title)
+        showCopyTextDialogSwitch.setDefaultValue(Preferences.copyTextDialogDefault)
+        showCopyTextDialogSwitch.key = Preferences.copyTextDialogKey
+        showCopyTextDialogSwitch.summary = getString(R.string.show_copy_dialog_summary)
+        showCopyTextDialogSwitch.isIconSpaceReserved = false
+        val textSection: PreferenceCategory? = findPreference("textSection")
+        textSection?.isIconSpaceReserved = false
+        textSection?.addPreference(showCopyTextDialogSwitch)
         // Configure and add Keep Screen On Switch
         val screenOnSwitch = SwitchPreferenceCompat(requireContext())
         screenOnSwitch.title = getString(R.string.keep_screen_on)

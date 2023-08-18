@@ -3,6 +3,7 @@ package com.gitlab.mudlej.MjPdfReader.ui.link
 import androidx.recyclerview.widget.RecyclerView
 import com.gitlab.mudlej.MjPdfReader.data.Link
 import com.gitlab.mudlej.MjPdfReader.databinding.LinkItemBinding
+import com.gitlab.mudlej.MjPdfReader.util.AdsLoader
 
 class LinkViewHolder(
     private val binding: LinkItemBinding,
@@ -16,13 +17,19 @@ class LinkViewHolder(
         binding.linkPageNumber.text = link.pageNumber.toString()
 
         binding.linkTextsLayout.setOnClickListener {
-            linkFunctions.onLinkClicked(link)
+            AdsLoader.showAds(activity){
+                linkFunctions.onLinkClicked(link)
+            }
         }
         binding.linkPageNumber.setOnClickListener {
-            linkFunctions.onPageNumberClicked(link)
+            AdsLoader.showAds(activity) {
+                linkFunctions.onPageNumberClicked(link)
+            }
         }
         binding.copyButton.setOnClickListener {
-            linkFunctions.onCopyLinkClicked(link)
+            AdsLoader.showAds(activity){
+                linkFunctions.onCopyLinkClicked(link)
+            }
         }
     }
 }

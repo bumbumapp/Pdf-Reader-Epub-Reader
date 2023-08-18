@@ -48,6 +48,9 @@
     <PreferenceCategory
         android:key="scrollSection"
         android:title="@string/scroll_settings" />
+    <PreferenceCategory
+        android:key="textSection"
+        android:title="Text Extraction" />
 
     <PreferenceCategory
         android:key="experimentalSection"
