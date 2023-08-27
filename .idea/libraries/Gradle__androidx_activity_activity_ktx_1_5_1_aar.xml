@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.activity:activity-ktx:1.5.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8eb69ccd90e17ca4d041a01436853172/transformed/jetified-activity-ktx-1.5.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8eb69ccd90e17ca4d041a01436853172/transformed/jetified-activity-ktx-1.5.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8eb69ccd90e17ca4d041a01436853172/transformed/jetified-activity-ktx-1.5.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/441a48eb7674b0eded90608467932d09/transformed/jetified-activity-ktx-1.5.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/441a48eb7674b0eded90608467932d09/transformed/jetified-activity-ktx-1.5.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/441a48eb7674b0eded90608467932d09/transformed/jetified-activity-ktx-1.5.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

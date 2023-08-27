@@ -84,6 +84,7 @@ import com.folioreader.Config
 import com.folioreader.FolioReader
 import com.folioreader.model.HighLight
 import com.folioreader.model.locators.ReadLocator
+import com.folioreader.util.AdsLoader
 import com.folioreader.util.AppUtil
 import com.folioreader.util.OnHighlightListener
 import com.folioreader.util.ReadLocatorListener
@@ -1059,7 +1060,11 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             }
             askForPdfPassword()
         } else if (couldNotOpenFileDueToMissingPermission(exception)) {
-            launchers.readFileErrorPermission.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+                launchers.readFileErrorPermission.launch(Manifest.permission.READ_MEDIA_IMAGES)
+            }else{
+                launchers.readFileErrorPermission.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
         } else {
             Toast.makeText(this, R.string.file_opening_error, Toast.LENGTH_LONG).show()
             Log.e(TAG, getString(R.string.file_opening_error), exception)
@@ -1067,7 +1072,12 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
     }
 
     private fun couldNotOpenFileDueToMissingPermission(e: Throwable): Boolean {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+       val permission = if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.TIRAMISU)
+           Manifest.permission.READ_MEDIA_IMAGES
+       else
+           Manifest.permission.READ_EXTERNAL_STORAGE
+
+        if (ContextCompat.checkSelfPermission(this, permission)
             == PackageManager.PERMISSION_GRANTED
         ) return false
         val exceptionMessage = e.message
@@ -1157,7 +1167,11 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         if (canWriteToDownloadFolder(this)) {
             trySaveToDownloads(fileContent, false)
         } else {
-            launchers.saveToDownloadPermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+                     launchers.saveToDownloadPermission.launch(Manifest.permission.READ_MEDIA_IMAGES)
+            else
+                launchers.saveToDownloadPermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+
         }
     }
 
@@ -1474,6 +1488,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
         outState.putParcelable(PDF.uriKey, pdf.uri)
         outState.putString(PDF.fileHashKey, pdf.fileHash)
         outState.putInt(PDF.pageNumberKey, pdf.pageNumber)
@@ -1481,7 +1496,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         outState.putBoolean(PDF.isFullScreenToggledKey, pdf.isFullScreenToggled)
         outState.putFloat(PDF.zoomKey, binding.pdfView.zoom)
         outState.putBoolean(PDF.isExtractingTextFinishedKey, pdf.isExtractingTextFinished)
-        super.onSaveInstanceState(outState)
+
     }
 
     private fun restoreInstanceState(savedState: Bundle) {

@@ -83,7 +83,11 @@ class MainIntroActivity : AppIntro() {
             third.imageDrawable = R.drawable.patterns_permissions
             third.bgColor = bg
             addSlide(AppIntroFragment.newInstance(third))
-            askForPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 3)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                askForPermissions(arrayOf(Manifest.permission.READ_MEDIA_IMAGES), 3)
+            }else{
+                askForPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 3)
+            }
         }
 
         showSkipButton(false)

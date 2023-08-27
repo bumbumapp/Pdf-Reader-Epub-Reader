@@ -1,9 +1,9 @@
 package com.gitlab.mudlej.MjPdfReader.ui.link
 
 import androidx.recyclerview.widget.RecyclerView
+import com.folioreader.util.AdsLoader
 import com.gitlab.mudlej.MjPdfReader.data.Link
 import com.gitlab.mudlej.MjPdfReader.databinding.LinkItemBinding
-import com.gitlab.mudlej.MjPdfReader.util.AdsLoader
 
 class LinkViewHolder(
     private val binding: LinkItemBinding,

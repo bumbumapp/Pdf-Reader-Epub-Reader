@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="14"
-6-->C:\Users\Durkhan\Play store projects\mj_pdf_reader-V2.0.1-stable\AndroidPdfViewer\android-pdf-viewer\src\main\AndroidManifest.xml
+6-->D:\PlayStoreProjects\mj_pdf_reader-V2.0.1-stable\AndroidPdfViewer\android-pdf-viewer\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="28" />
-7-->C:\Users\Durkhan\Play store projects\mj_pdf_reader-V2.0.1-stable\AndroidPdfViewer\android-pdf-viewer\src\main\AndroidManifest.xml
+7-->D:\PlayStoreProjects\mj_pdf_reader-V2.0.1-stable\AndroidPdfViewer\android-pdf-viewer\src\main\AndroidManifest.xml
 8
 9</manifest>

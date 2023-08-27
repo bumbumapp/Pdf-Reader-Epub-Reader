@@ -16,6 +16,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mj_pdf_reader-V2.0.1-stable.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/mj_pdf_reader-V2.0.1-stable.folioreader.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/mj_pdf_reader-V2.0.1-stable.folioreader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/mj_pdf_reader-V2.0.1-stable.folioreader.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/mj_pdf_reader-V2.0.1-stable.folioreader.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/mj_pdf_reader-V2.0.1-stable.folioreader.main.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/mj_pdf_reader-V2.0.1-stable.folioreader.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/mj_pdf_reader-V2.0.1-stable.folioreader.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/mj_pdf_reader-V2.0.1-stable.folioreader.unitTest.iml" />
     </modules>
   </component>
 </project>

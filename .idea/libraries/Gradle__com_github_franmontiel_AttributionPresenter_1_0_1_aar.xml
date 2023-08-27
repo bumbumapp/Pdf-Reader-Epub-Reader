@@ -1,15 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.franmontiel:AttributionPresenter:1.0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0d98f2daaaa124e6c010c04092889f47/transformed/jetified-AttributionPresenter-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0d98f2daaaa124e6c010c04092889f47/transformed/jetified-AttributionPresenter-1.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0d98f2daaaa124e6c010c04092889f47/transformed/jetified-AttributionPresenter-1.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9ec627acbf646bc3975b6ce497918328/transformed/jetified-AttributionPresenter-1.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9ec627acbf646bc3975b6ce497918328/transformed/jetified-AttributionPresenter-1.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9ec627acbf646bc3975b6ce497918328/transformed/jetified-AttributionPresenter-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fee5c25bd412d7b90c2f664717a5e59c/transformed/jetified-AttributionPresenter-1.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/fee5c25bd412d7b90c2f664717a5e59c/transformed/jetified-AttributionPresenter-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/fee5c25bd412d7b90c2f664717a5e59c/transformed/jetified-AttributionPresenter-1.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a9244c81632df6c9c5d4b23bbab760ee/transformed/jetified-AttributionPresenter-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a9244c81632df6c9c5d4b23bbab760ee/transformed/jetified-AttributionPresenter-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a9244c81632df6c9c5d4b23bbab760ee/transformed/jetified-AttributionPresenter-1.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

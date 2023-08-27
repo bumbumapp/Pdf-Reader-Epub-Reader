@@ -9,11 +9,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.get
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.folioreader.util.AdsLoader
 import com.gitlab.mudlej.MjPdfReader.R
-import com.gitlab.mudlej.MjPdfReader.data.Bookmark
-import com.gitlab.mudlej.MjPdfReader.data.PDF
 import com.gitlab.mudlej.MjPdfReader.databinding.BookmarksListItemBinding
-import com.gitlab.mudlej.MjPdfReader.util.AdsLoader
 import com.shockwave.pdfium.PdfDocument
 
 class BookmarkViewHolder(
@@ -45,9 +43,6 @@ class BookmarkViewHolder(
         subText.setOnClickListener { bookmarkFunctions.onBookmarkClicked(bookmarks[position]) }
         subPageNumber.setOnClickListener { bookmarkFunctions.onBookmarkClicked(bookmarks[position]) }
         subBookmarkLayout.setOnClickListener { AdsLoader.showAds(activity){bookmarkFunctions.onBookmarkClicked(bookmarks[position]) }}
-
-//            if (subBookmark.level != 0)
-//                subBookmarkLayout.setBackgroundResource(R.drawable.transparent_background)
 
         if (subBookmark.hasChildren()) {
             subChildrenLayout.removeAllViews()

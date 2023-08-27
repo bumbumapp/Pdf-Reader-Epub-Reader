@@ -54,13 +54,13 @@ android {
     }
 
     buildToolsVersion "30.0.3"
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.bumbumapps.pdfandepubreader"
         minSdkVersion 21
-        targetSdkVersion 32
-        versionCode 3
-        versionName "1.0.2"
+        targetSdkVersion 33
+        versionCode 4
+        versionName "1.0.3"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
     }
@@ -110,15 +110,7 @@ android {
     }
 
 }
-//    splits {
-//        abi {
-//            enable true
-//            reset()
-//            include "x86_64", "x86", "armeabi-v7a", "arm64-v8a"
-//            universalApk true
-//        }
-//    }
-//}
+
 
 dependencies {
     // Kotlin
@@ -152,7 +144,7 @@ dependencies {
 
     // MJ PDF's fork of
     implementation project(':AndroidPdfViewer:android-pdf-viewer')
-
+    implementation project(':folioreader')
     // License Presenter Library (Proguard config not needed)
     implementation 'com.github.franmontiel:AttributionPresenter:1.0.1'
 
@@ -162,21 +154,17 @@ dependencies {
     // kotlin coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
 
-    // A color picker for Android by Hong Duan
+
     implementation 'com.github.duanhong169:colorpicker:1.1.6'
     implementation 'androidx.activity:activity-ktx:1.2.0'
     implementation 'io.objectbox:objectbox-android:2.9.0'
     annotationProcessor 'io.objectbox:objectbox-processor:2.9.0'
-    implementation "com.folioreader:folioreader:0.5.4"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation platform('com.google.firebase:firebase-bom:31.2.2')
 
-    // Add the dependencies for the Crashlytics and Analytics libraries
-    // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.karumi:dexter:6.2.3'
     implementation 'com.google.android.gms:play-services-ads:21.5.0'
-
     implementation 'com.itextpdf:itextg:5.5.10'
 
 }

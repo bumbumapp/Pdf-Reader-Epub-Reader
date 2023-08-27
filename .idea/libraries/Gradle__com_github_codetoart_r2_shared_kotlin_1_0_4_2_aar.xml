@@ -1,9 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.codetoart:r2-shared-kotlin:1.0.4-2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/088024545157c0dced3971fc18060d09/transformed/jetified-r2-shared-kotlin-1.0.4-2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/088024545157c0dced3971fc18060d09/transformed/jetified-r2-shared-kotlin-1.0.4-2/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/088024545157c0dced3971fc18060d09/transformed/jetified-r2-shared-kotlin-1.0.4-2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5e1fe964904e620427756bc9acf3b514/transformed/jetified-r2-shared-kotlin-1.0.4-2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5e1fe964904e620427756bc9acf3b514/transformed/jetified-r2-shared-kotlin-1.0.4-2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

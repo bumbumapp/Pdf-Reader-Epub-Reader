@@ -55,13 +55,13 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.text.isDigitsOnly
+import com.folioreader.util.AdsLoader
 import com.gitlab.mudlej.MjPdfReader.BuildConfig
 import com.gitlab.mudlej.MjPdfReader.R
 import com.gitlab.mudlej.MjPdfReader.data.PDF
 import com.gitlab.mudlej.MjPdfReader.data.Preferences
 import com.gitlab.mudlej.MjPdfReader.databinding.PasswordDialogBinding
 import com.gitlab.mudlej.MjPdfReader.ui.main.MainActivity
-import com.gitlab.mudlej.MjPdfReader.util.AdsLoader
 import com.google.android.material.textfield.TextInputLayout
 import com.shockwave.pdfium.PdfDocument
 

@@ -187,9 +187,12 @@ fun writeBytesToFile(directory: File, fileName: String, fileContent: ByteArray?)
 }
 
 fun canWriteToDownloadFolder(context: Context): Boolean =
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) true
-    else ContextCompat.checkSelfPermission(context,
+       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+        ContextCompat.checkSelfPermission(context,
+            Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED    else
+        ContextCompat.checkSelfPermission(context,
         Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+
 
 @Throws(IOException::class)
 fun readBytesToEnd(inputStream: InputStream): ByteArray? {

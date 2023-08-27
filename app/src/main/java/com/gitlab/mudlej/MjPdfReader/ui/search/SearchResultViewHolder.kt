@@ -11,9 +11,9 @@ import android.text.style.UnderlineSpan
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.folioreader.util.AdsLoader
 import com.gitlab.mudlej.MjPdfReader.data.SearchResult
 import com.gitlab.mudlej.MjPdfReader.databinding.SearchResultItemBinding
-import com.gitlab.mudlej.MjPdfReader.util.AdsLoader
 import com.gitlab.mudlej.MjPdfReader.util.indexesOf
 
 class SearchResultViewHolder(
