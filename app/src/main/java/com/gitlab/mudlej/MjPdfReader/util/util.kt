@@ -186,12 +186,11 @@ fun writeBytesToFile(directory: File, fileName: String, fileContent: ByteArray?)
     FileOutputStream(file).use { stream -> stream.write(fileContent) }
 }
 
+/** Android 11+ lets apps create their own files in Download/ without any permission. */
 fun canWriteToDownloadFolder(context: Context): Boolean =
-       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+    Build.VERSION.SDK_INT >= Build.VERSION_CODES.R ||
         ContextCompat.checkSelfPermission(context,
-            Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED    else
-        ContextCompat.checkSelfPermission(context,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+            Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
 
 
 @Throws(IOException::class)
@@ -267,4 +266,39 @@ private fun openScreenshot(activity: Activity, imageFile: File) {
     val uri = Uri.fromFile(imageFile)
     intent.setDataAndType(uri, "image/*")
     activity.startActivity(intent)
+}
+
+
+/**
+ * Returns the path of a copy of [uri] inside [dir] (which FileProvider can share).
+ * Never throws; returns null if the document can't be read. The old copies NPE'd on a null cursor
+ * (file:// or revoked URIs) and looped forever when InputStream.available() returned 0.
+ */
+fun copyUriToLocalFile(context: Context, uri: Uri, dir: File): String? {
+    return try {
+        if (uri.scheme == null || uri.scheme == "file") {
+            // Copy into our own directory so FileProvider can expose it (it has no root for /sdcard).
+            val src = File(uri.path ?: return null)
+            if (!src.isFile) return null
+            if (src.parentFile?.canonicalPath == dir.canonicalPath) return src.path
+            val dst = File(dir, safeFileName(src.name))
+            src.inputStream().use { inp -> FileOutputStream(dst).use { out -> inp.copyTo(out, 64 * 1024) } }
+            return dst.path
+        }
+        var name: String? = null
+        context.contentResolver.query(uri, arrayOf(android.provider.OpenableColumns.DISPLAY_NAME), null, null, null)
+            ?.use { c -> if (c.moveToFirst()) name = c.getString(0) }
+        val file = File(dir, safeFileName(name ?: uri.lastPathSegment))
+        val input = context.contentResolver.openInputStream(uri) ?: return null
+        input.use { inp -> FileOutputStream(file).use { out -> inp.copyTo(out, 64 * 1024) } }
+        file.path
+    } catch (e: Exception) {
+        null
+    }
+}
+
+/** File name usable inside our own directories (no path separators, never empty). */
+fun safeFileName(raw: String?): String {
+    val base = raw?.substringAfterLast('/')?.replace(Regex("[\\\\/:*?\"<>|\\u0000]"), "_")?.trim()
+    return if (base.isNullOrEmpty() || base == "." || base == "..") "document" else base
 }

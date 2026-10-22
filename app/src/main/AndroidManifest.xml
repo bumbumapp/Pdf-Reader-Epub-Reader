@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.gitlab.mudlej.MjPdfReader">
+    xmlns:tools="http://schemas.android.com/tools">
 
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name="com.gitlab.mudlej.MjPdfReader.App"
-        android:allowBackup="true"
+        android:enableOnBackInvokedCallback="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/mj_app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:icon, android:label, android:theme"
+        tools:replace="android:icon, android:roundIcon, android:label, android:theme"
         android:theme="@style/MJ_PDF_THEME"
         android:usesCleartextTraffic="true">
 
@@ -152,7 +150,7 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             tools:replace="android:value"
-            android:value="@string/app_id"/>
+            android:value="${admobAppId}"/>
     </application>
 
 </manifest>

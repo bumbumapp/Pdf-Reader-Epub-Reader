@@ -7,15 +7,16 @@ import com.shockwave.pdfium.PdfiumCore
 
 object PdfExtractorFactory {
 
-    fun create(activity: Activity, uri: Uri): PdfExtractor {
+    /** @throws java.io.IOException if the file can't be opened (missing, revoked permission, wrong password). */
+    @Throws(java.io.IOException::class)
+    fun create(activity: Activity, uri: Uri, password: String? = null): PdfExtractor {
         val pdfium = PdfiumCore(activity)
-        var parcelFileDescriptor: ParcelFileDescriptor? = null
-        try {
-            parcelFileDescriptor = activity.contentResolver.openFileDescriptor(uri, "r")
-        } catch (e: Throwable) {
-            e.printStackTrace()
-        }
-        val pdfDocument = pdfium.newDocument(parcelFileDescriptor)
-        return PdfExtractorImpl(pdfium, pdfDocument)
+        val parcelFileDescriptor: ParcelFileDescriptor = try {
+            activity.contentResolver.openFileDescriptor(uri, "r")
+        } catch (e: Exception) {
+            throw java.io.IOException("Cannot open $uri", e)
+        } ?: throw java.io.FileNotFoundException("Cannot open $uri")
+        val pdfDocument = pdfium.newDocument(parcelFileDescriptor, password)
+        return PdfExtractorImpl(pdfium, pdfDocument, password)
     }
 }

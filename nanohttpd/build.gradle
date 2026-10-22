@@ -1,0 +1,8 @@
+// Vendored NanoHTTPD (core + nanolets) at commit fd80618e93d, BSD-3 licensed (see LICENSE.md).
+// r2-streamer-kotlin was built against this jitpack snapshot, which jitpack can no longer build.
+apply plugin: 'java-library'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

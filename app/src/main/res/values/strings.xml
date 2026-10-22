@@ -292,8 +292,6 @@
     <string name="dracula_theme">Dracula Theme</string>
     <string name="recent_file">Recent Files</string>
 
-    <string name="banner_id">ca-app-pub-8444865753152507/7253899057</string>
-    <string name="app_id">ca-app-pub-8444865753152507~2009558657</string>
-    <string name="interstitial_id">ca-app-pub-8444865753152507/6012969574</string>
 
+    <string name="privacy_options">Privacy options</string>
 </resources>

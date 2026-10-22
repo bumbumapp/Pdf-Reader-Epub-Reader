@@ -1,30 +1,20 @@
 package com.gitlab.mudlej.MjPdfReader.manager.extractor
 
 import com.gitlab.mudlej.MjPdfReader.data.Link
-import com.itextpdf.text.pdf.PdfReader
-import com.itextpdf.text.pdf.parser.PdfTextExtractor
 import com.shockwave.pdfium.PdfDocument
 import com.shockwave.pdfium.PdfiumCore
 import java.io.File
 
 class PdfExtractorImpl(
     private val pdfiumCore: PdfiumCore,
-    private val pdfDocument: PdfDocument
+    private val pdfDocument: PdfDocument,
+    password: String? = null
 ) : PdfExtractor {
 
-    override fun getPageText(pdfFilePath: String, pageNumber: Int): String? {
-        var pageText: String? = null
-        var file = File(pdfFilePath)
+    private val textReader = PdfTextReader(password)
 
-        if (file.exists()) {
-            val pdfReader: PdfReader = PdfReader(pdfFilePath)
-            pageText = PdfTextExtractor.getTextFromPage(pdfReader,pageNumber)
-        }
-
-
-        return if (pageText == null) "" else pageText
-    }
-
+    override fun getPageText(pdfFilePath: String, pageNumber: Int): String? =
+        textReader.getPageText(pdfFilePath, pageNumber)
 
     override fun getPageCount() = pdfiumCore.getPageCount(pdfDocument)
 

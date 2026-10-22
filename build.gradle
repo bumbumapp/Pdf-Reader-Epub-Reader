@@ -1,35 +1,43 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    
+    ext.kotlin_version = '2.2.21'
     repositories {
         google()
-        jcenter()
         mavenCentral()
-        maven {   url "https://maven.google.com"  }
     }
     dependencies {
-        classpath 'com.google.gms:google-services:4.3.10'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.1'
-        classpath 'com.android.tools.build:gradle:4.0.2'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
-        classpath "io.objectbox:objectbox-gradle-plugin:2.9.0"
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.android.tools.build:gradle:8.13.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.5.0'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:3.0.8'
+        classpath 'io.objectbox:objectbox-gradle-plugin:5.4.2'
     }
 }
+
+apply from: "versions.gradle"
 
 allprojects {
+    // r2-streamer pins a NanoHttpd jitpack snapshot (org.nanohttpd packages) that jitpack can no longer
+    // build; the same sources are vendored in :nanohttpd.
+    configurations.configureEach {
+        resolutionStrategy.dependencySubstitution {
+            substitute module('com.github.NanoHttpd.nanohttpd:nanohttpd') using project(':nanohttpd')
+            substitute module('com.github.NanoHttpd.nanohttpd:nanohttpd-nanolets') using project(':nanohttpd')
+            // jcenter-only; same package (com.google.android.flexbox) in the maintained artifact.
+            substitute module('com.google.android:flexbox') using module('com.google.android.flexbox:flexbox:3.0.0')
+        }
+        // r2-shared declares Fuel (jcenter-only) but none of its classes use it.
+        exclude group: 'com.github.kittinunf.fuel'
+    }
     repositories {
         google()
-        jcenter()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven {
+            url "https://jitpack.io"
+            content { includeGroupByRegex 'com\\.github\\..*' }
+        }
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+tasks.register('clean', Delete) {
+    delete rootProject.layout.buildDirectory
 }
-

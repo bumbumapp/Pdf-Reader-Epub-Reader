@@ -1,0 +1,91 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace 'com.folioreader'
+    useLibrary 'org.apache.http.legacy'
+    compileSdk versions.androidCompileSdk
+
+    defaultConfig {
+        minSdk versions.androidMinSdk
+        targetSdk versions.androidTargetSdk
+        vectorDrawables.useSupportLibrary = true
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildFeatures {
+        buildConfig true
+        viewBinding true
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = ['res']
+        }
+        test {
+            java.srcDirs = ['src/test/java']
+        }
+    }
+
+    packaging {
+        resources {
+            excludes += ['META-INF/ASL2.0', 'META-INF/DEPENDENCIES.txt', 'META-INF/LICENSE.txt',
+                         'META-INF/NOTICE.txt', 'META-INF/NOTICE', 'META-INF/LICENSE', 'META-INF/DEPENDENCIES',
+                         'META-INF/notice.txt', 'META-INF/license.txt', 'META-INF/dependencies.txt',
+                         'META-INF/LGPL2.1', 'META-INF/services/javax.annotation.processing.Processor']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    lint {
+        abortOnError false
+        lintConfig file("lint.xml")
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
+    implementation "com.google.android.material:material:$versions.material"
+    implementation 'androidx.core:core-ktx:1.17.0'
+    testImplementation 'junit:junit:4.13.2'
+
+    implementation 'org.slf4j:slf4j-android:1.7.25'
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    implementation 'org.greenrobot:eventbus:3.3.1'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    implementation project(':nanohttpd')
+
+    implementation "com.fasterxml.jackson.core:jackson-core:$versions.jackson"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:$versions.jackson"
+    implementation "com.fasterxml.jackson.core:jackson-databind:$versions.jackson"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:$versions.jackson"
+    implementation "com.google.code.gson:gson:$versions.gson"
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-jackson:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
+    api("com.github.codetoart:r2-shared-kotlin:$versions.r2SharedKotlin") {
+        changing = true
+    }
+    api("com.github.codetoart:r2-streamer-kotlin:$versions.r2StreamerKotlin") {
+        exclude group: "org.slf4j", module: "slf4j-api"
+        changing = true
+    }
+    implementation 'org.springframework:spring-core:4.3.19.RELEASE'
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+
+    api 'com.google.android.gms:play-services-ads:25.5.0'
+    api 'com.google.android.ump:user-messaging-platform:4.0.0'
+}

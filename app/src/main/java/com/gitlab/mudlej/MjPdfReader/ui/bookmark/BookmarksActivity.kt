@@ -32,7 +32,7 @@ class BookmarksActivity : AppCompatActivity(), BookmarkFunctions {
         setContentView(binding.root)
 
         showProgressBar()
-        initPdfExtractor()
+        if (!initPdfExtractor()) return
         initActionBar()
         initBookmarks()
         initUi()
@@ -42,9 +42,17 @@ class BookmarksActivity : AppCompatActivity(), BookmarkFunctions {
         binding.progressBar.visibility = View.VISIBLE
     }
 
-    private fun initPdfExtractor() {
+    private fun initPdfExtractor(): Boolean {
         val pdfPath = intent.getStringExtra(PDF.filePathKey)
-        pdfExtractor = PdfExtractorFactory.create(this, Uri.parse(pdfPath))
+        // Missing path, revoked URI permission or encrypted file used to crash this screen.
+        pdfExtractor = try {
+            PdfExtractorFactory.create(this, Uri.parse(pdfPath ?: ""), intent.getStringExtra(PDF.passwordKey))
+        } catch (e: Exception) {
+            android.widget.Toast.makeText(this, e.message ?: e.toString(), android.widget.Toast.LENGTH_LONG).show()
+            finish()
+            return false
+        }
+        return true
     }
 
     private fun initBookmarks() {

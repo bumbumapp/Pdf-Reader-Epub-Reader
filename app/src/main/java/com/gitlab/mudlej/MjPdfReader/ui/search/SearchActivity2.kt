@@ -24,6 +24,7 @@ import com.gitlab.mudlej.MjPdfReader.databinding.ActivitySearch2Binding
 import com.gitlab.mudlej.MjPdfReader.manager.extractor.PdfExtractor
 import com.gitlab.mudlej.MjPdfReader.manager.extractor.PdfExtractorFactory
 import com.gitlab.mudlej.MjPdfReader.util.indexesOf
+import com.gitlab.mudlej.MjPdfReader.util.copyUriToLocalFile
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
@@ -56,7 +57,7 @@ class SearchActivity2 : AppCompatActivity(), SearchResultFunctions {
         val uri = Uri.parse(pdfPath)
         path = getFilePathForN(uri,this)
         showProgressBar()
-        initPdfExtractor()
+        if (!initPdfExtractor()) return
         initActionBar()
         initSearchResults()
         initLoadingProgressBar()
@@ -83,8 +84,16 @@ class SearchActivity2 : AppCompatActivity(), SearchResultFunctions {
         title = getString(R.string.searching)
     }
 
-    private fun initPdfExtractor() {
-        pdfExtractor = PdfExtractorFactory.create(this, Uri.parse(pdfPath))
+    private fun initPdfExtractor(): Boolean {
+        // Missing path, revoked URI permission or encrypted file used to crash this screen.
+        pdfExtractor = try {
+            PdfExtractorFactory.create(this, Uri.parse(pdfPath ?: ""), intent.getStringExtra(PDF.passwordKey))
+        } catch (e: Exception) {
+            android.widget.Toast.makeText(this, e.message ?: e.toString(), android.widget.Toast.LENGTH_LONG).show()
+            finish()
+            return false
+        }
+        return true
     }
 
     private fun initRecyclerView() {
@@ -257,45 +266,8 @@ class SearchActivity2 : AppCompatActivity(), SearchResultFunctions {
         finish()
     }
     @SuppressLint("Recycle")
-    private fun getFilePathForN(uri: Uri, context: Context): String? {
-        var filePath = uri.path.toString()
-        val file = File(filePath)
-        if (file.exists()){
-            return filePath
-        }
-        else{
-            val returnCursor = context.contentResolver.query(uri, null, null, null, null)
-            val nameIndex = returnCursor!!.getColumnIndex(OpenableColumns.DISPLAY_NAME)
-            val sizeIndex = returnCursor.getColumnIndex(OpenableColumns.SIZE)
-            returnCursor.moveToFirst()
-            val name = returnCursor.getString(nameIndex)
-            val size = java.lang.Long.toString(returnCursor.getLong(sizeIndex))
-            val file = File(context.filesDir, name)
-            try {
-                val inputStream = context.contentResolver.openInputStream(uri)
-                val outputStream = FileOutputStream(file)
-                var read = 0
-                val maxBufferSize = 1 * 1024 * 1024
-                val bytesAvailable = inputStream!!.available()
-
-                //int bufferSize = 1024;
-                val bufferSize = Math.min(bytesAvailable, maxBufferSize)
-                val buffers = ByteArray(bufferSize)
-                while (inputStream.read(buffers).also { read = it } != -1) {
-                    outputStream.write(buffers, 0, read)
-                }
-                Log.e("File Size", "Size " + file.length())
-                inputStream.close()
-                outputStream.close()
-                Log.e("File Path", "Path " + file.path)
-                Log.e("File Size", "Size " + file.length())
-            } catch (e: java.lang.Exception) {
-                Log.e("Exception", e.message!!)
-            }
-            return file.path
-        }
-
-    }
+    private fun getFilePathForN(uri: Uri, context: Context): String? =
+        copyUriToLocalFile(context, uri, context.filesDir)
 
 
     override fun onShowMoreResultTextClicked(searchResult: SearchResult, searchResultIndex: Int): SearchResult {

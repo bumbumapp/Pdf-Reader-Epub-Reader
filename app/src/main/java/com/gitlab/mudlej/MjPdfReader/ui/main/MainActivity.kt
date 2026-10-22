@@ -114,7 +114,8 @@ import com.gitlab.mudlej.MjPdfReader.ui.link.LinksActivity
 import com.gitlab.mudlej.MjPdfReader.ui.search.SearchActivity2
 import com.gitlab.mudlej.MjPdfReader.ui.settings.SettingsActivity
 import com.gitlab.mudlej.MjPdfReader.util.*
-import com.google.android.gms.ads.AdRequest
+import com.folioreader.util.AdsConsent
+import com.folioreader.util.BannerHelper
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -180,8 +181,12 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
 
         epubreaderLoad()
 
-        val adRequest = AdRequest.Builder().build()
-        binding.adView.loadAd(adRequest)
+        // UMP consent first; ads (banner + preloaded interstitial) only once requests are allowed.
+        AdsConsent.gather(this) {
+            AdsLoader.displayInterstitial(this)
+            binding.adView.post { BannerHelper.load(this, binding.adView) }
+            invalidateOptionsMenu()
+        }
         // Create PDF by restoring it in case of an activity restart OR open filer picker
         if (savedInstanceState != null) {
             restoreInstanceState(savedInstanceState)
@@ -382,8 +387,17 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         Log.d("EXCEPTIONREAD", "e.message.toString()")
         supportActionBar?.show()
         checkVisiblity=false
-        val mimeType = contentResolver.getType(uri)
-        if (mimeType!!.endsWith("/epub+zip")) {
+        // getType() is null for file:// and some provider URIs (was an NPE on launch).
+        val mimeType = try { contentResolver.getType(uri) } catch (e: Exception) { null }
+            ?: android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(
+                android.webkit.MimeTypeMap.getFileExtensionFromUrl(uri.toString()).lowercase()
+            )
+        val isEpub = mimeType?.endsWith("/epub+zip") == true || uri.toString().endsWith(".epub", ignoreCase = true)
+        if (pdf.uri == null) {
+            Toast.makeText(this, R.string.file_opening_error, Toast.LENGTH_LONG).show()
+            return
+        }
+        if (isEpub) {
             getFileEpubReaderFile(pdf.uri!!)
               finish()
 
@@ -807,36 +821,8 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
     private fun checkPermission() {
         pickFile()
     }
-    private fun getDriveFilePath(uri: Uri, context: Context): String? {
-        val returnCursor = context.contentResolver.query(uri, null, null, null, null)
-        val nameIndex = returnCursor!!.getColumnIndex(OpenableColumns.DISPLAY_NAME)
-        val sizeIndex = returnCursor.getColumnIndex(OpenableColumns.SIZE)
-        returnCursor.moveToFirst()
-        val name = returnCursor.getString(nameIndex)
-        val size = java.lang.Long.toString(returnCursor.getLong(sizeIndex))
-        val file = File(context.cacheDir, name)
-        try {
-            val inputStream = context.contentResolver.openInputStream(uri)
-            val outputStream = FileOutputStream(file)
-            var read = 0
-            val maxBufferSize = 1 * 1024 * 1024
-            val bytesAvailable = inputStream!!.available()
-
-            //int bufferSize = 1024;
-            val bufferSize = Math.min(bytesAvailable, maxBufferSize)
-            val buffers = ByteArray(bufferSize)
-            while (inputStream.read(buffers).also { read = it } != -1) {
-                outputStream.write(buffers, 0, read)
-            }
-            Log.e("File Size", "Size " + file.length())
-            inputStream.close()
-            outputStream.close()
-            Log.e("File Path", "Path " + file.path)
-        } catch (e: Exception) {
-            Log.e("Exception", e.message!!)
-        }
-        return file.path
-    }
+    private fun getDriveFilePath(uri: Uri, context: Context): String? =
+        copyUriToLocalFile(context, uri, context.cacheDir)
 
     private fun addRecentFiles(data: Uri?) {
         val calendar = Calendar.getInstance()
@@ -1060,11 +1046,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             }
             askForPdfPassword()
         } else if (couldNotOpenFileDueToMissingPermission(exception)) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
-                launchers.readFileErrorPermission.launch(Manifest.permission.READ_MEDIA_IMAGES)
-            }else{
-                launchers.readFileErrorPermission.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
-            }
+            launchers.readFileErrorPermission.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
         } else {
             Toast.makeText(this, R.string.file_opening_error, Toast.LENGTH_LONG).show()
             Log.e(TAG, getString(R.string.file_opening_error), exception)
@@ -1072,10 +1054,9 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
     }
 
     private fun couldNotOpenFileDueToMissingPermission(e: Throwable): Boolean {
-       val permission = if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.TIRAMISU)
-           Manifest.permission.READ_MEDIA_IMAGES
-       else
-           Manifest.permission.READ_EXTERNAL_STORAGE
+        // Android 13+ has no broad storage permission; documents are opened through granted URIs.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) return false
+        val permission = Manifest.permission.READ_EXTERNAL_STORAGE
 
         if (ContextCompat.checkSelfPermission(this, permission)
             == PackageManager.PERMISSION_GRANTED
@@ -1167,10 +1148,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         if (canWriteToDownloadFolder(this)) {
             trySaveToDownloads(fileContent, false)
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
-                     launchers.saveToDownloadPermission.launch(Manifest.permission.READ_MEDIA_IMAGES)
-            else
-                launchers.saveToDownloadPermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            launchers.saveToDownloadPermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
         }
     }
@@ -1247,6 +1225,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu2, menu)
+        menu.findItem(R.id.privacyOptionsOption)?.isVisible = AdsConsent.isPrivacyOptionsRequired(this)
         menu.showOptionalIcons()
         return true
     }
@@ -1263,6 +1242,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             R.id.printFileOption -> printFile()
             R.id.toggleSecondBar -> toggleSecondBar()
             R.id.additionalOptionsOption -> showAdditionalOptions()
+            R.id.privacyOptionsOption -> AdsConsent.showPrivacyOptions(this)
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -1276,6 +1256,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
                 fun startSearchActivity() {
                     Intent(this@MainActivity, SearchActivity2::class.java).also { searchIntent ->
                         searchIntent.putExtra(PDF.filePathKey, pdf.uri.toString())
+            searchIntent.putExtra(PDF.passwordKey, pdf.password)
                         searchIntent.putExtra(PDF.searchQueryKey, query)
                         startActivityForResult(searchIntent, PDF.startSearchActivity)
                     }
@@ -1325,6 +1306,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
     private fun showLinks() {
         Intent(this@MainActivity, LinksActivity::class.java).also { linksIntent ->
             linksIntent.putExtra(PDF.filePathKey, pdf.uri.toString())
+            linksIntent.putExtra(PDF.passwordKey, pdf.password)
             startActivityForResult(linksIntent, PDF.startLinksActivity)
         }
     }
@@ -1332,6 +1314,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
     private fun showBookmarks() {
         Intent(this@MainActivity, BookmarksActivity::class.java).also { bookmarkIntent ->
             bookmarkIntent.putExtra(PDF.filePathKey, pdf.uri.toString())
+            bookmarkIntent.putExtra(PDF.passwordKey, pdf.password)
             startActivityForResult(bookmarkIntent, PDF.startBookmarksActivity)
         }
     }
@@ -1482,6 +1465,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             val image = File(imagesDir, fileName)
             Pair(FileOutputStream(image), image.toUri())
         }
+        if (fileOutputStream == null) throw IOException("Cannot create image file")
         bitmap.compress(Bitmap.CompressFormat.JPEG, PDF.SCREENSHOT_IMAGE_QUALITY, fileOutputStream)
         fileOutputStream?.close()
         return imageUri

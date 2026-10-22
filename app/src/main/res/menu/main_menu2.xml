@@ -111,4 +111,10 @@
         android:icon="@drawable/ic_awesome"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/privacyOptionsOption"
+        android:title="@string/privacy_options"
+        android:visible="false"
+        app:showAsAction="never" />
+
 </menu>
