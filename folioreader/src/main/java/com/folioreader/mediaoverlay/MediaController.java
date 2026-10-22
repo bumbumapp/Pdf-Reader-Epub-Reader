@@ -104,6 +104,11 @@ public class MediaController {
         mTextToSpeech = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
+                // onInit can run synchronously inside the constructor (e.g. no TTS engine installed),
+                // before mTextToSpeech is assigned; that used to crash opening any EPUB.
+                if (mTextToSpeech == null || status == TextToSpeech.ERROR) {
+                    return;
+                }
                 if (status != TextToSpeech.ERROR) {
                     mTextToSpeech.setLanguage(Locale.UK);
                     mTextToSpeech.setSpeechRate(0.70f);
