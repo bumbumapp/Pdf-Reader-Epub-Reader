@@ -94,6 +94,7 @@ import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle
 import com.github.barteksc.pdfviewer.scroll.ScrollHandle
 import com.github.barteksc.pdfviewer.util.Constants
 import com.github.barteksc.pdfviewer.util.FitPolicy
+import com.gitlab.mudlej.MjPdfReader.EdgeToEdgeInsets
 import com.gitlab.mudlej.MjPdfReader.Launcher
 import com.gitlab.mudlej.MjPdfReader.Launchers
 import com.gitlab.mudlej.MjPdfReader.R
@@ -1013,7 +1014,9 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
 
     private fun configureTheme() {
         // This should be moved to the onCreate or xml files
-        window.statusBarColor = Color.parseColor("#221f35")
+        // Explicit on every load: after "Toggle PDF Theme" recreates the activity the bar was white
+        // with white icons on Android 15+.
+        EdgeToEdgeInsets.paintStatusBar(this, Color.parseColor("#221f35"))
 
         val pdfView = binding.pdfView
 

@@ -97,6 +97,19 @@ public final class EdgeToEdgeInsets implements Application.ActivityLifecycleCall
         ViewCompat.requestApplyInsets(root);
     }
 
+    /**
+     * Paints the status bar area with [color] and picks readable icons. Below API 35 the system draws
+     * window.statusBarColor itself; on 35+ the bar shows the decor background set here.
+     */
+    public static void paintStatusBar(@NonNull Activity activity, int color) {
+        Window window = activity.getWindow();
+        if (window == null) return;
+        window.setStatusBarColor(color);
+        View decor = window.getDecorView();
+        if (android.os.Build.VERSION.SDK_INT >= 35) decor.setBackgroundColor(color);
+        WindowCompat.getInsetsController(window, decor).setAppearanceLightStatusBars(isLight(color));
+    }
+
     static boolean isLight(int color) {
         double r = ((color >> 16) & 0xff) / 255.0, g = ((color >> 8) & 0xff) / 255.0, b = (color & 0xff) / 255.0;
         return (0.299 * r + 0.587 * g + 0.114 * b) > 0.6;
