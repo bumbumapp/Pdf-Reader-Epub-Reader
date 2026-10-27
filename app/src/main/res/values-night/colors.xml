@@ -7,7 +7,7 @@
 
     <color name="colorBrightOpposite">#263238</color>
     <color name="colorDarkOpposite">#FDF9F9</color>
-    <color name="dark_blue">#ffffff</color>
+    <color name="dark_blue">@color/brand_ink</color>
 
 
 </resources>

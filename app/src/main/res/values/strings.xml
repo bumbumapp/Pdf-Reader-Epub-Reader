@@ -294,4 +294,12 @@
 
 
     <string name="privacy_options">Privacy options</string>
+    <!-- 2026 home redesign -->
+    <string name="about">About</string>
+    <string name="home_title">PDF Reader</string>
+    <string name="home_hero_title">Open a PDF or EPUB</string>
+    <string name="home_hero_body">Read, search and bookmark your documents, with night mode. Works offline.</string>
+    <string name="home_open_file">Open file</string>
+    <string name="home_empty_title">No recent files yet</string>
+    <string name="home_empty_body">Files you open appear here so you can continue where you left off.</string>
 </resources>

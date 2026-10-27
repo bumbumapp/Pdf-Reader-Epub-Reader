@@ -13,10 +13,10 @@
     <color name="white">#ffffff</color>
     <color name="grey">#CDCDCD</color>
     <color name="darkGrey">#959595</color>
-    <color name="dark_blue">#221f35</color>
+    <color name="dark_blue">@color/brand_ink</color>
 
     <color name="topBarColor">@color/white</color>
-    <color name="topBarBackgroundColor">#221f35</color>
+    <color name="topBarBackgroundColor">@color/brand_ink</color>
     <color name="topBarBackgroundOffColor">#2F2F2F</color>
 
 

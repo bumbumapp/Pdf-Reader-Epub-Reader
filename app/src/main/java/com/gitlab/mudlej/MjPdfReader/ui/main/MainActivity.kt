@@ -205,6 +205,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
                 }
             }
         }
+       binding.homeOpenButton.setOnClickListener { pickFile() }
        binding.landingOpenFab.setOnClickListener {
            pickFile()
        }
@@ -819,9 +820,6 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         }
     }
 
-    private fun checkPermission() {
-        pickFile()
-    }
     private fun getDriveFilePath(uri: Uri, context: Context): String? =
         copyUriToLocalFile(context, uri, context.cacheDir)
 
@@ -1603,8 +1601,8 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             recentFiles = recentFilePathsBox.all
 
             if (recentFiles.isEmpty()){
-                checkPermission()
-                binding.emptyFolder.visibility=View.VISIBLE
+                // Empty state with an Open file button instead of forcing the system picker open.
+                withContext(Dispatchers.Main) { binding.emptyFolder.visibility = View.VISIBLE }
             }else{
             Log.d("intent.data",""+recentFiles)
             withContext(Dispatchers.Main) {

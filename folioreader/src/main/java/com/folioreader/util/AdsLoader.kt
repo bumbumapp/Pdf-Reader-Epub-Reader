@@ -6,7 +6,7 @@ import android.content.ContextWrapper
 
 /**
  * Interstitials for the whole app (PDF and EPUB screens) go through [InterstitialHelper]:
- * consent gated, preloaded once, shown at most once per [InterstitialHelper.MIN_INTERVAL_MS].
+ * consent gated, preloaded once, shown at most once an hour and never in the first hour after install.
  */
 object AdsLoader {
 

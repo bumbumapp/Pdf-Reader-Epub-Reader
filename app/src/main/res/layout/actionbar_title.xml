@@ -17,7 +17,7 @@
         android:textColor="@color/white"
         android:maxLines="2"
         android:textStyle="bold"
-        android:fontFamily="@font/sf_pro_display_regular"
+        android:fontFamily="@font/manrope_semibold"
         android:ellipsize="end"/>
 
 

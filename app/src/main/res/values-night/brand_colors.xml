@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_ink">#1B1D23</color>
+    <color name="brand_onInk">#F2F3F5</color>
+    <color name="brand_accent">#FF6B70</color>
+    <color name="brand_onAccent">#2A0607</color>
+    <color name="brand_accentContainer">#3A1B1D</color>
+    <color name="brand_ground">#0E0F12</color>
+    <color name="brand_card">#1B1D22</color>
+    <color name="brand_text">#ECEDF0</color>
+    <color name="brand_textMuted">#9EA3AE</color>
+</resources>
