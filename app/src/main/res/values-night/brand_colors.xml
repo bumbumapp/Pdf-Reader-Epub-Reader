@@ -2,11 +2,15 @@
 <resources>
     <color name="brand_ink">#1B1D23</color>
     <color name="brand_onInk">#F2F3F5</color>
-    <color name="brand_accent">#FF6B70</color>
-    <color name="brand_onAccent">#2A0607</color>
+    <color name="brand_accent">#F0565B</color>
+    <color name="brand_onAccent">#FFFFFF</color>
     <color name="brand_accentContainer">#3A1B1D</color>
-    <color name="brand_ground">#0E0F12</color>
-    <color name="brand_card">#1B1D22</color>
-    <color name="brand_text">#ECEDF0</color>
-    <color name="brand_textMuted">#9EA3AE</color>
+    <color name="brand_ground">#0D0F16</color>
+    <color name="brand_card">#171A23</color>
+    <color name="brand_text">#F2F4F8</color>
+    <color name="brand_textMuted">#A4AABA</color>
+    <color name="tile_pdf_bg">#3A1B1D</color>
+    <color name="tile_pdf_fg">#FF8A8E</color>
+    <color name="tile_epub_bg">#12302A</color>
+    <color name="tile_epub_fg">#5FD3A6</color>
 </resources>

@@ -206,6 +206,16 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
             }
         }
        binding.homeOpenButton.setOnClickListener { pickFile() }
+       binding.homeHero.setOnClickListener { pickFile() }
+       binding.homeTilePdf.setOnClickListener { pickFile(arrayOf("application/pdf")) }
+       binding.homeTileEpub.setOnClickListener { pickFile(arrayOf("application/epub+zip")) }
+       binding.homeGreeting.setText(
+           when (java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)) {
+               in 5..11 -> R.string.home_greeting_morning
+               in 12..17 -> R.string.home_greeting_afternoon
+               else -> R.string.home_greeting_evening
+           }
+       )
        binding.landingOpenFab.setOnClickListener {
            pickFile()
        }
@@ -343,12 +353,12 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
 
 
 
-    private fun pickFile() {
+    private fun pickFile(mimeTypes: Array<String> = arrayOf("application/pdf", "application/epub+zip")) {
         try {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
-                type = "*/*"  // Allow all file types
-                putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("application/pdf", "application/epub+zip"))
+                type = "*/*"
+                putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes)
             }
             launchers.pdfPicker.launch(intent)
         } catch (e: ActivityNotFoundException) {
@@ -770,6 +780,8 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         super.onResume()
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         if (pref.getScreenOn()) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        // EdgeToEdgeInsets paints the theme's dark bar in onStart; home repaints it light.
+        binding.pickFile.post { if (binding.pickFile.visibility == View.VISIBLE) paintHomeBars() }
 
         // check if there is a pdf at first
         // if (pdf.uri == null) return
@@ -796,6 +808,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
     private fun checkPdfuri(uri: Uri?) {
         if (uri != null){
             binding.pickFile.visibility = View.GONE
+            EdgeToEdgeInsets.paintStatusBar(this, Color.parseColor("#221f35"))
             if (!checkVisiblity) {
                 binding.pdfView.visibility = View.VISIBLE
             }else{
@@ -1015,6 +1028,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         // Explicit on every load: after "Toggle PDF Theme" recreates the activity the bar was white
         // with white icons on Android 15+.
         EdgeToEdgeInsets.paintStatusBar(this, Color.parseColor("#221f35"))
+        if (binding.pickFile.visibility == View.VISIBLE) paintHomeBars()
 
         val pdfView = binding.pdfView
 
@@ -1582,8 +1596,18 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
         }
     }
 
+    /** Home is a light Bento surface: bars take its colour (reader screens repaint them dark). */
+    private fun paintHomeBars() {
+        val ground = androidx.core.content.ContextCompat.getColor(this, R.color.brand_ground)
+        EdgeToEdgeInsets.paintStatusBar(this, ground)
+        window.navigationBarColor = ground
+        androidx.core.view.WindowCompat.getInsetsController(window, window.decorView)
+            .isAppearanceLightNavigationBars = EdgeToEdgeInsets.isLight(ground)
+    }
+
     private fun checkVisibilityForRecentFiles() {
         binding.pickFile.visibility=View.VISIBLE
+        paintHomeBars()
         binding.pdfView.visibility=View.GONE
         binding.secondBarLayout.visibility=View.GONE
         supportActionBar?.hide()
@@ -1602,7 +1626,10 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
 
             if (recentFiles.isEmpty()){
                 // Empty state with an Open file button instead of forcing the system picker open.
-                withContext(Dispatchers.Main) { binding.emptyFolder.visibility = View.VISIBLE }
+                withContext(Dispatchers.Main) {
+                    binding.emptyFolder.visibility = View.VISIBLE
+                    binding.recentCard.visibility = View.GONE
+                }
             }else{
             Log.d("intent.data",""+recentFiles)
             withContext(Dispatchers.Main) {
@@ -1616,6 +1643,7 @@ class MainActivity : AppCompatActivity(), OnHighlightListener, ReadLocatorListen
                     }
 
                 })
+                binding.recentCard.visibility = View.VISIBLE
                 binding.recycleViewPdfs.apply {
                     adapter = pdfsAdapter
                     layoutManager = LinearLayoutManager(this@MainActivity)

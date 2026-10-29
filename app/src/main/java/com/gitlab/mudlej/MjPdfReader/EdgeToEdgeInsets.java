@@ -110,7 +110,7 @@ public final class EdgeToEdgeInsets implements Application.ActivityLifecycleCall
         WindowCompat.getInsetsController(window, decor).setAppearanceLightStatusBars(isLight(color));
     }
 
-    static boolean isLight(int color) {
+    public static boolean isLight(int color) {
         double r = ((color >> 16) & 0xff) / 255.0, g = ((color >> 8) & 0xff) / 255.0, b = (color & 0xff) / 255.0;
         return (0.299 * r + 0.587 * g + 0.114 * b) > 0.6;
     }
