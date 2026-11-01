@@ -55,9 +55,9 @@ def hmsAdsPropsFile = rootProject.file('ads.properties')
 if (hmsAdsPropsFile.exists()) hmsAdsPropsFile.withInputStream { hmsAdsProps.load(it) }
 def hmsAdId = { String key, String fallback -> ((project.findProperty(key) ?: hmsAdsProps.getProperty(key)) ?: fallback).toString() }
 def HMS_TEST_BANNER_ID = 'testw6vs28auh3'
-def HMS_BANNER_ID = hmsAdId('HMS_BANNER_ID', HMS_TEST_BANNER_ID)
+def HMS_BANNER_ID = hmsAdId('HMS_BANNER_ID', 'i9bgyjy7js')
 def HMS_TEST_INTERSTITIAL_ID = 'testb4znbuh3n2'
-def HMS_INTERSTITIAL_ID = hmsAdId('HMS_INTERSTITIAL_ID', HMS_TEST_INTERSTITIAL_ID)
+def HMS_INTERSTITIAL_ID = hmsAdId('HMS_INTERSTITIAL_ID', 'o5g1byknf9')
 
 android {
     namespace 'com.gitlab.mudlej.MjPdfReader'
