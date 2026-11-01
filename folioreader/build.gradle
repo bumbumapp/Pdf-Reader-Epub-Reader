@@ -50,6 +50,18 @@ android {
         abortOnError false
         lintConfig file("lint.xml")
     }
+
+    // play = Google Play (AdMob + UMP), hms = Huawei AppGallery (Huawei Ads). The app module picks the
+    // matching flavor; the hms slot IDs here are Huawei test slots, overridden by the app's hms flavor.
+    flavorDimensions = ['store']
+    productFlavors {
+        play {
+            dimension 'store'
+        }
+        hms {
+            dimension 'store'
+        }
+    }
 }
 
 dependencies {
@@ -86,6 +98,7 @@ dependencies {
     implementation 'org.springframework:spring-core:4.3.19.RELEASE'
     implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
 
-    api 'com.google.android.gms:play-services-ads:25.5.0'
-    api 'com.google.android.ump:user-messaging-platform:4.0.0'
+    playApi 'com.google.android.gms:play-services-ads:25.5.0'
+    playApi 'com.google.android.ump:user-messaging-platform:4.0.0'
+    hmsApi 'com.huawei.hms:ads-lite:13.4.91.301'
 }

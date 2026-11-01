@@ -4,7 +4,6 @@
 
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" />
@@ -147,10 +146,6 @@
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
             android:value="true" />
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            tools:replace="android:value"
-            android:value="${admobAppId}"/>
     </application>
 
 </manifest>

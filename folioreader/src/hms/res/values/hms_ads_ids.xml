@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Huawei Ads test slots; the app module's hms flavor overrides the real slot IDs. -->
+    <string name="hms_banner_id" translatable="false">testw6vs28auh3</string>
+    <string name="hms_interstitial_id" translatable="false">testb4znbuh3n2</string>
+    <string name="hms_test_banner_id" translatable="false">testw6vs28auh3</string>
+    <string name="hms_test_interstitial_id" translatable="false">testb4znbuh3n2</string>
+</resources>
